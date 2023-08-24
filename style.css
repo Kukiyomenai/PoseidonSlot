@@ -1,0 +1,345 @@
+.main {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    background: url('./images/publicdomainq-0000176zbmfug.jpg') no-repeat center center;
+    background-size: contain;
+}
+
+
+/* コピペ禁止 */
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* 画像ドラッグ禁止 */
+img {
+    pointer-events: none;
+}
+
+
+
+/* トップエリア */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* コイン表示 */
+.coin {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #84A2BB;
+    color: white;
+    border: 2px solid #082E49;
+    border-radius: 10px;
+    padding: 0px 10px;
+    width: 100px;
+    /* ボタンの幅を指定 */
+    height: 40px;
+    /* ボタンの高さを指定 */
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.coin:hover {
+    background-color: #527694;
+}
+
+/* 金額メニュー */
+.moneyMenu {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 350px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: top 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-direction: row;
+    /* 横に並べる */
+    z-index: 999;
+    /* 他の要素より上に表示する */
+}
+
+.moneyMenu.active {
+    top: 0;
+    /* メニューを表示する */
+}
+
+.betAdd {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin-right: 15px;
+    /* ボタン間の間隔 */
+}
+
+
+
+/* 案内ボタン */
+.info {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #84A2BB;
+    color: white;
+    border: 2px solid #082E49;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.info:hover {
+    background-color: #527694;
+}
+
+/* 案内メニュー */
+.infoMenu {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 350px;
+    height: 100px;
+    font-size: 8px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: top 0.3s;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-direction: row;
+    /* 横に並べる */
+    z-index: 999;
+    /* 他の要素より上に表示する */
+}
+
+.infoMenu.active {
+    top: 0;
+    /* メニューを表示する */
+}
+
+.infoMenu-Group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 案内メニュー内*/
+.grape,
+.strawberry,
+.watermelon,
+.banana,
+.cherry,
+.plum,
+.lemon,
+.bar,
+.seven {
+    width: 20px;
+    height: 20px;
+    margin: 0px 5px;
+}
+
+
+
+/* スロットのフレーム */
+.slotFrame {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slotFrameL,
+.slotFrameC,
+.slotFrameR {
+    border-radius: 10px;
+    padding: 90px 50px;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px #082E49, 0 0 40px #2B4E6A, 0 0 60px #84A2BB;
+}
+
+.imageL img,
+.imageC img,
+.imageR img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -585px);
+}
+
+
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+/* ボトムエリア */
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+/* ベット金額表示 */
+.bet {
+    height: 55px;
+    /* ボタンの高さを指定 */
+    padding: 10px 10px;
+    font-size: 8px;
+    font-weight: bold;
+    background-color: #84A2BB;
+    color: white;
+    border: 2px solid #082E49;
+    border-radius: 10px;
+}
+
+/* ベットプラスボタン */
+.betPlus,
+.betMinus {
+    margin: 1px 0px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #84A2BB;
+    color: white;
+    border: 2px solid #082E49;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 28px;
+    /* ボタンの幅を指定 */
+    height: 28px;
+    /* ボタンの高さを指定 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* テキストを垂直方向にも中央に配置 */
+    line-height: 1;
+    /* テキストの行の高さを無効にする */
+    text-align: center;
+    /* テキストを中央に配置 */
+}
+
+.betPlus:hover,
+.betMinus:hover {
+    background-color: #527694;
+}
+
+/* 無効時のスタイル */
+.betPlus:disabled,
+.betMinus:disabled {
+    background-color: #b1b1b1;
+    color: white;
+    cursor: not-allowed;
+}
+
+/* 無効時のホバー時のスタイル */
+.betPlus:disabled:hover,
+.betMinus:disabled:hover {
+    background-color: #b1b1b1;
+    /* あるいは好みの色に変更 */
+}
+
+
+/* 今まで勝った金額表示 */
+.totalWin {
+    height: 55px;
+    /* ボタンの高さを指定 */
+    padding: 10px 10px;
+    font-size: 8px;
+    font-weight: bold;
+    background-color: #84A2BB;
+    color: white;
+    border: 2px solid #082E49;
+    border-radius: 10px;
+}
+
+/* 勝った金額表示 */
+.nowWin {
+    height: 55px;
+    /* ボタンの高さを指定 */
+    padding: 10px 10px;
+    font-size: 8px;
+    font-weight: bold;
+    background-color: #84A2BB;
+    color: white;
+    border: 2px solid #082E49;
+    border-radius: 10px;
+}
+
+/* スピンボタン */
+.spinBtn {
+    height: 55px;
+    /* ボタンの高さを指定 */
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #84A2BB;
+    color: white;
+    border: 2px solid #082E49;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.spinBtn:hover {
+    background-color: #527694;
+}
+
+/* 無効時のスタイル */
+.spinBtn:disabled {
+    background-color: #b1b1b1;
+    color: white;
+    cursor: not-allowed;
+}
+
+/* 無効時のホバー時のスタイル */
+.spinBtn:disabled:hover {
+    background-color: #b1b1b1;
+    /* あるいは好みの色に変更 */
+}
+
+.soundButton {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
