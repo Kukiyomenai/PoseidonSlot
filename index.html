@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ポセイドンスロット</title>
+    <!-- favicon -->
+    <link rel="icon"
+        href="./images/icons8-slot-machine-40.png">
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="text/javascript" src="./script.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <!-- 上部 -->
+        <div class="top">
+            <input type="button" value="\0" class="coin" id="coinBtn" onclick="soundEffect(coinBtnSE); toggleMoneyMenu();">
+            <div class="moneyMenu" id="moneyMenuBtn">
+                <input type="button" value="\50" class="betAdd" id="betAddBtn" onclick="betAdd(50);">
+                <input type="button" value="\100" class="betAdd" id="betAddBtn" onclick="betAdd(100);">
+                <input type="button" value="\250" class="betAdd" id="betAddBtn" onclick="betAdd(250);">
+                <input type="button" value="\500" class="betAdd" id="betAddBtn" onclick="betAdd(500);">
+            </div>
+
+            <input type="button" value="INFO" class="info" id="infoBtn" onclick="soundEffect(infoBtnSE); toggleInfoMenu();">
+            <div class="infoMenu" id="infoMenuBtn">
+                <div class="infoMenu-Group">
+                    <img src="./images/1.png" class="grape">
+                    <img src="./images/1.png" class="grape">
+                    <img src="./images/1.png" class="grape">x1
+                    <img src="./images/2.png" class="strawberry">
+                    <img src="./images/2.png" class="strawberry">
+                    <img src="./images/2.png" class="strawberry">x2
+                    <img src="./images/3.png" class="watermelon">
+                    <img src="./images/3.png" class="watermelon">
+                    <img src="./images/3.png" class="watermelon">x3
+                </div>
+
+                <div class="infoMenu-Group">
+                    <img src="./images/4.png" class="banana">
+                    <img src="./images/4.png" class="banana">
+                    <img src="./images/4.png" class="banana">x4
+                    <img src="./images/6.png" class="cherry">
+                    <img src="./images/6.png" class="cherry">
+                    <img src="./images/6.png" class="cherry">x5
+                    <img src="./images/8.png" class="plum">
+                    <img src="./images/8.png" class="plum">
+                    <img src="./images/8.png" class="plum">x6
+                </div>
+
+                <div class="infoMenu-Group">
+                    <img src="./images/9.png" class="lemon">
+                    <img src="./images/9.png" class="lemon">
+                    <img src="./images/9.png" class="lemon">x7
+                    <img src="./images/7.png" class="bar">
+                    <img src="./images/7.png" class="bar">
+                    <img src="./images/7.png" class="bar">x25
+                    <img src="./images/5.png" class="seven">
+                    <img src="./images/5.png" class="seven">
+                    <img src="./images/5.png" class="seven">x50
+                </div>
+            </div>
+        </div>
+
+        <!-- 中央 -->
+        <div class="slotFrame">
+            <div class="slotFrameL" onclick="reelLstop();">
+                <div class="imageL"><img id="imageL" src="./images/LAfter.png"></div>
+            </div>
+            <div class="slotFrameC" onclick="reelCstop();">
+                <div class="imageC"><img id="imageC" src="./images/CAfter.png"></div>
+            </div>
+            <div class="slotFrameR" onclick="reelRstop();">
+                <div class="imageR"><img id="imageR" src="./images/RAfter.png"></div>
+            </div>
+        </div>
+
+        <!-- 下部 -->
+        <div class="bottom">
+            <div class="bet">BET<br>\<label id="bet">0</label></div>
+            <div class="betButtons">
+                <input type="button" value="+" class="betPlus" id="betPlusBtn" onclick="soundEffect(betPlusBtnSE); betPlus();">
+                <input type="button" value="-" class="betMinus" id="betMinusBtn" onclick="soundEffect(betMinusBtnSE); betMinus();">
+            </div>
+            <div class="totalWin">TotalWIN<br>\<labe id="totalWin">0</labe>
+            </div>
+            <div class="nowWin">WIN<br>\<label id="nowWin">0</label></div>
+            <input type="button" value="SPIN" class="spinBtn" id="spinBtn" onclick="soundEffect(spinBtnSE); spinAndStop();">
+        </div>
+
+        <div class="soundButton" id="soundButton" onclick="bgm();">
+            <img src="./images/スピーカーOFFアイコン.png" alt="音ボタン" id="soundIcon">
+        </div>
+        <!-- サウンド -->
+        <div>
+            <audio id="bgm" src="./sounds/Love-s_Embrace_mp3.mp3" loop></audio>
+            <audio id="coinBtnSE" src="./sounds/決定ボタンを押す52.mp3"></audio>
+            <audio id="moneySE" src="./sounds/zihanki_insert.mp3"></audio>
+            <audio id="infoBtnSE" src="./sounds/決定ボタンを押す53.mp3"></audio>
+            <audio id="betPlusBtnSE" src="./sounds/決定ボタンを押す44.mp3"></audio>
+            <audio id="betMinusBtnSE" src="./sounds/決定ボタンを押す50.mp3"></audio>
+            <audio id="reelSE" src="./sounds/Slot_Machine_Spin_mp3.mp3"></audio>
+            <audio id="reelLstopSE" src="./sounds/カーソル移動8.mp3"></audio>
+            <audio id="reelCstopSE" src="./sounds/カーソル移動8.mp3"></audio>
+            <audio id="reelRstopSE" src="./sounds/カーソル移動8.mp3"></audio>
+            <audio id="spinBtnSE" src="./sounds/Punchy_Pop_Choir_Dings_mp3.mp3"></audio>
+            <audio id="sevenSE" src="./sounds/Slot_Machine_Win_mp3.mp3"></audio>
+        </div>
+    </div>
+</body>
+
+</html>
