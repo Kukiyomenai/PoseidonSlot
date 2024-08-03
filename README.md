@@ -1,5 +1,5 @@
 # PoseidonSlot  
-https://kanamoji3.github.io/PoseidonSlot/  
+https://Kukiyomenai.github.io/PoseidonSlot/  
   
 ・海をモチーフにしたスロット。  
 ・お金は左上の所持金をクリック  
